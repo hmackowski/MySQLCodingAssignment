@@ -48,7 +48,7 @@ CREATE TABLE project_category (
 project_id INT NOT NULL,
 category_id INT NOT NULL,
 FOREIGN KEY (project_id) REFERENCES project(project_id),
-FOREIGN KEY (category_id)REFERENCES category(category_id)
+FOREIGN KEY (category_id) REFERENCES category(category_id)
 );
 
 
