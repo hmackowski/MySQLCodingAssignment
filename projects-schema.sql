@@ -29,7 +29,7 @@ project_id INT NOT NULL,
 step_text text NOT NULL,
 step_order INT NOT NULL,
 PRIMARY KEY (step_id),
-FOREIGN KEY (project_id) REFERENCES project(project_id)
+FOREIGN KEY (project_id) REFERENCES project(project_id) ON DELETE CASCADE
 );
 
 CREATE TABLE material (
@@ -39,7 +39,7 @@ material_name varchar(128) NOT NULL,
 num_required INT,
 cost decimal(7,2),
 PRIMARY KEY (material_id),
-FOREIGN KEY (project_id) REFERENCES project(project_id)
+FOREIGN KEY (project_id) REFERENCES project(project_id) ON DELETE CASCADE
 );
 
 
@@ -47,8 +47,8 @@ FOREIGN KEY (project_id) REFERENCES project(project_id)
 CREATE TABLE project_category (
 project_id INT NOT NULL,
 category_id INT NOT NULL,
-FOREIGN KEY (project_id) REFERENCES project(project_id),
-FOREIGN KEY (category_id) REFERENCES category(category_id)
+FOREIGN KEY (project_id) REFERENCES project(project_id) ON DELETE CASCADE,
+FOREIGN KEY (category_id) REFERENCES category(category_id) ON DELETE CASCADE
 );
 
 
